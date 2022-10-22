@@ -7,7 +7,5 @@ router.get("/", homeController.getHome);
 router.get("/book-list", bookController.getBookList);
 router.get("/books", bookController.getBook);
 router.post("/books", bookController.postBook);
-router.get('/delete-book',bookController.deleteBook);
-router.get('/delete-book',bookController.editBook);
 
 module.exports = router;

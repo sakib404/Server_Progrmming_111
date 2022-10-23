@@ -1,40 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Books</title>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        table, th, td {
+        table,
+        th,
+        td {
             border: 1px solid black;
         }
-        th, td {
+
+        th,
+        td {
             padding: 10px;
         }
     </style>
-  </head>
-  <body>
+    <title>Books</title>
+</head>
+
+<body>
     <table>
-    <tr>
-        <th>Book Name</th>
-        <th>Author</th>
-        <th>Genre</th>
-    </tr>
-    
-
-
-    <%for(let i=0; i<books.length; i++){%>
         <tr>
-            <td><%=books[i].name%></td>
-            <td><%=books[i].author%></td>
-            <td><%=books[i].genre%></td>
-            <td>
-                <a href="book-list/delete?name=<%=books[i].name%>"></a>
-            </td>
+            <th>Name</th>
+            <th>Author</th>
+            <th>Genre</th>
+            <th></th>
+            <th></th>
         </tr>
-    <%}%>
-</table>
 
-  </body>
+        <% for(let i=0; i<books.length; i++){%>
+            <tr>
+                <td>
+                    <%=books[i].name%>
+                </td>
+                <td>
+                    <%=books[i].author%>
+                </td>
+                <td>
+                    <%=books[i].genre%>
+                </td>
+                <td>
+                    <a class="btn btn-raised btn-danger" href="book-list/delete/<%=books[i].id%>">Delete</a>
+                </td>
+                <td>
+                    <a class="btn btn-raised btn-info" href="book-list/update/<%= books[i].id %>">Update</a>
+                </td>
+            </tr>
+            <%}%>
+    </table>
+</body>
+
 </html>

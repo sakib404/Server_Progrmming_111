@@ -19,9 +19,8 @@
     <tr>
         <th>Book Name</th>
         <th>Author</th>
-        <th>Genre</th>
+        <th>Genre</td>
     </tr>
-    
 
 
     <%for(let i=0; i<books.length; i++){%>
@@ -29,9 +28,6 @@
             <td><%=books[i].name%></td>
             <td><%=books[i].author%></td>
             <td><%=books[i].genre%></td>
-            <td>
-                <a href="book-list/delete?name=<%=books[i].name%>"></a>
-            </td>
         </tr>
     <%}%>
 </table>

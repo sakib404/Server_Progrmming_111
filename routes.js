@@ -1,11 +1,9 @@
-const express = require("express");
-const router = express.Router();
-const homeController = require("./controllers/homeController");
-const bookController = require("./controllers/bookController");
+const express = require("express")
+const router = express.Router()
+const indexController = require("./controllers/indexController")
 
-router.get("/", homeController.getHome);
-router.get("/book-list", bookController.getBookList);
-router.get("/books", bookController.getBook);
-router.post("/books", bookController.postBook);
+router.get("/",indexController.getIndexPage)
+router.post("/send",indexController.postMessege)
+router.get("/refresh",indexController.refresh)
 
-module.exports = router;
+module.exports = router
